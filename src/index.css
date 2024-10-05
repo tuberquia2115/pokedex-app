@@ -1,0 +1,33 @@
+:root {
+  --primary-color: #DC0A2D;
+  --bg-white: #FFFFFF;
+  --ui-sans-serif: 'Poppins';
+  --bg-card: #FFFFFF;
+  --bg-gray-card: #EFEFEF;
+  font-family: Poppins sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  background-color: var(--primary-color);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+
+body {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
