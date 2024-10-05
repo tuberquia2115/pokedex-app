@@ -1,0 +1,28 @@
+.container_search{
+  width: 80%;
+  height: 32px;
+  display: flex;
+  background-color: #FFFFFF;
+  padding: 8px 8px;
+  overflow: hidden;
+  border-radius: 50px;
+}
+
+.container_search_bar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 12px 0px 24px;
+ 
+}
+
+.input {
+  width: 100%;
+  height: 100%;
+  font-family: Poppins;
+  font-weight: 400;
+  margin-left: 8px;
+  margin-right: 16px;
+  
+
+}

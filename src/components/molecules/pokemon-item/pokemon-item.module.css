@@ -1,0 +1,31 @@
+.container_card {
+  background-color: var(--bg-card);
+  display: flex;
+  flex-direction: column;
+height: 100%;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  overflow: hidden;
+}
+
+.card_footer {
+  bottom: 0;
+  position: absolute;
+  height: 50%;
+  background-color: var(--bg-gray-card);
+  width: 100%;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+.image {
+  z-index: 999;
+  width: fit-content;
+  height: fit-content;
+}
+
+.pokemon_name {
+  z-index: 999;
+}
