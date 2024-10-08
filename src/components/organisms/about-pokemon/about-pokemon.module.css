@@ -1,0 +1,17 @@
+.container_about_items {
+  display: flex;
+  flex-direction: row;
+}
+
+.container_items_height {
+  border-left: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+}
+
+.title {
+  font-size: larger;
+  font-family: 'Poppins';
+  font-weight: 700;
+  text-align: center;
+  padding: 16px 0px;
+}
