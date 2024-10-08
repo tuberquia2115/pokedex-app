@@ -1,9 +1,11 @@
 import { useCallback, useEffect, useState } from "react";
 
 import { useDebounce } from "@/hooks";
+import { Input } from "@/components/atoms";
 import { SortMenu } from "@/components/molecules";
-import { Image, Input } from "@/components/atoms";
+import { SearchIcon, CloseIcon } from "@/components/atoms/icons";
 import { setPokemonSearchInputValue, useAppDispatch } from "@/store";
+
 import styles from "./filters.module.css";
 
 export const Filters = () => {
@@ -28,7 +30,7 @@ export const Filters = () => {
   return (
     <div className={styles.container_search_bar}>
       <div className={styles.container_search}>
-        <Image src="assets/icons/search.png" alt="search" />
+        <SearchIcon className={styles.search_icon} />
         <Input
           name="searchTerm"
           value={searchValue}
@@ -38,12 +40,8 @@ export const Filters = () => {
           onChange={({ target }) => setSearchValue(target.value)}
         />
         {searchValue && (
-          <button
-            type="button"
-            className={styles.btn_close}
-            onClick={onCleanSearchText}
-          >
-            <Image src="assets/icons/close.png" alt="close" />
+          <button type="button" onClick={onCleanSearchText}>
+            <CloseIcon className={styles.close_icon} />
           </button>
         )}
       </div>

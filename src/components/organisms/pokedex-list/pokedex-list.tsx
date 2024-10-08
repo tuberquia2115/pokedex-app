@@ -1,10 +1,11 @@
 import React from "react";
 
 import { Card } from "@/components/atoms/card";
-import { PokemonItem } from "@/components/molecules";
 import { PokemonV2Pokemon } from "@/interfaces";
-import styles from "./pokedex-list.module.css";
 import { NoSearchResults } from "@/components/atoms";
+import { PokemonItem } from "@/components/molecules";
+
+import styles from "./pokedex-list.module.css";
 
 interface PokedexListProps {
   pokemons: PokemonV2Pokemon[];
