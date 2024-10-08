@@ -13,9 +13,6 @@ export const GET_POKEMON_BY_ID = gql(`
           id
         }
       }
-      pokemon_v2_pokemonsprites {
-        sprites(path: "other")
-      }
       pokemon_v2_pokemonmoves(limit: 2) {
         pokemon_v2_move {
           name
