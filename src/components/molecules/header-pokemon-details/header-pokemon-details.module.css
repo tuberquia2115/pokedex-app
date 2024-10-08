@@ -2,10 +2,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 24px;
   width: 95%;
   margin: auto;
- padding-top: 20px;
+  padding-top: 20px;
 }
 
 .container_btn_back {

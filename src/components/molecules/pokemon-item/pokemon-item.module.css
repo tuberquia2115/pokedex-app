@@ -36,7 +36,7 @@
   font-size: large;
   font-size: smaller;
   font-family: Poppins;
-  color: #1d1d1d;
+  color: var(--color-gray-scale-dark);
 }
 
 .pokemon_id {
@@ -54,4 +54,18 @@
   width: 100%;
   z-index: 0;
   position: relative;
+}
+
+.container_favorite {
+  padding: 8px 0px;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  z-index: -999;
+  
+}
+.favorite_icon {
+  color: var(--primary-color);
+  width: 25px;
+  height: 25px;
 }

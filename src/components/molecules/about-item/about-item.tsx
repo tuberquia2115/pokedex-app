@@ -13,14 +13,12 @@ export const AboutItem: React.FC<AboutItemProps> = ({
   label,
   contentValue,
   classNameContainer,
-}) => {
-  return (
-    <div className={`${styles.container} ${classNameContainer}`}>
-      <div className={styles.container_icon__and_value}>
-        {icon && icon}
-        <p className={styles.content_value}>{contentValue}</p>
-      </div>
-      <p className={styles.pokemon_label}>{label}</p>
+}) => (
+  <div className={`${styles.container} ${classNameContainer}`}>
+    <div className={styles.container_icon__and_value}>
+      {icon && icon}
+      <p className={styles.content_value}>{contentValue}</p>
     </div>
-  );
-};
+    <p className={styles.pokemon_label}>{label}</p>
+  </div>
+);

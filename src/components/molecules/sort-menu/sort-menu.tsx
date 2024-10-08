@@ -3,11 +3,14 @@ import React, { ChangeEvent, useState } from "react";
 import { Button, Card } from "@/components/atoms";
 import { useAppDispatch } from "../../../store/store";
 import { setSortTypeSelected, useAppSelector } from "@/store";
+import { TextFormatIcon } from "@/components/atoms/icons/text-format-icon";
+
 import styles from "./sort-menu.module.css";
 
 const menuOptions = [
   { id: "sort-by-id", label: "Number", value: "id" },
   { id: "sort-by-name", label: "Name", value: "name" },
+  { id: "sort-by-favorites", label: "Favorites", value: "favorites" },
 ];
 
 export const SortMenu = () => {
@@ -15,9 +18,10 @@ export const SortMenu = () => {
   const dispatch = useAppDispatch();
 
   const { sortTypeSelected } = useAppSelector((state) => state.filters);
-  const sortButtonLabels: { [key: string]: string } = {
+  const sortButtonLabels: { [key: string]: string | JSX.Element } = {
     id: "#",
-    name: "A",
+    name: <TextFormatIcon width={20} height={20} />,
+    favorites: "❤️",
   };
 
   const handleOptionChange = (event: ChangeEvent<HTMLInputElement>) => {

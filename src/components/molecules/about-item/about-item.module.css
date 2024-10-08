@@ -24,7 +24,7 @@
 }
 
 .content_value {
-  color: #1D1D1D;
+  color: var(--color-gray-scale-dark);
   font-weight: 400;
   font-family: 'Poppins';
   font-size: smaller;

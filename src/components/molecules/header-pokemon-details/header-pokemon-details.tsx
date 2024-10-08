@@ -1,8 +1,9 @@
+import { useNavigate } from "react-router-dom";
+
 import { ArrowBackIcon } from "@/components/atoms/icons";
 import { useAppSelector } from "@/store";
 
 import styles from "./header-pokemon-details.module.css";
-import { useNavigate } from "react-router-dom";
 
 export const HeaderPokemonDetails = () => {
   const { pokemonDetails } = useAppSelector((state) => state.pokemons);

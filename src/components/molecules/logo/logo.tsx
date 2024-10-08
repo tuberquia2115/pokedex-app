@@ -1,10 +1,11 @@
-import { Image, Title } from "@/components/atoms";
+import { Title } from "@/components/atoms";
 
+import { PokeBallIcon } from "@/components/atoms/icons";
 import styles from "./logo.module.css";
 
 export const Logo = () => (
   <div className={styles.container}>
-    <Image src="assets/icons/poke-ball.png" alt="poke-ball" />
+    <PokeBallIcon />
     <Title classNameContainer={styles.label}>Pokédex</Title>
   </div>
 );

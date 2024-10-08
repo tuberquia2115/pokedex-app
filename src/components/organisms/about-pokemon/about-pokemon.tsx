@@ -19,7 +19,13 @@ export const AboutPokemon = () => {
       </Title>
       <div className={styles.container_about_items}>
         <AboutItem
-          icon={<WeightIcon height={20} width={20} />}
+          icon={
+            <WeightIcon
+              height={20}
+              width={20}
+              fill="var(--color-gray-scale-dark)"
+            />
+          }
           label="Weight"
           contentValue={`${weight} kg`}
         />
@@ -30,6 +36,7 @@ export const AboutPokemon = () => {
               height={20}
               width={20}
               transform={"rotate(-90)"}
+              fill="var(--color-gray-scale-dark)"
             />
           }
           label="Height"

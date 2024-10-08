@@ -1,5 +1,5 @@
-import { Chips } from "@/components/atoms";
 import { useAppSelector } from "@/store";
+import { Chips } from "@/components/atoms";
 
 import styles from "./pokemon-types.module.css";
 

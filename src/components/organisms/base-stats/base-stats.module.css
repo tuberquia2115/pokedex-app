@@ -48,6 +48,6 @@
     padding-right: 8px;
     font-family: 'Poppins';
     font-size: smaller;
-    color: #1D1D1D;
+    color: var(--color-gray-scale-dark);
   }
 }
