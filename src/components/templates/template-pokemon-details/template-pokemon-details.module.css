@@ -27,24 +27,23 @@
 
 .pokemon_image {
   align-self: center;
-  width: 100%; 
+  width: 100%;
   z-index: 1;
   position: relative;
   object-position: center center;
   object-fit: contain;
-  
 }
 
 .card_details {
   position: relative;
-  bottom: 60px;
+  bottom: 80px;
   background-color: var(--bg-white);
   margin: 4px;
   padding-top: 56px;
 }
 
 .flavor_text {
-  color: #1d1d1d;
+  color: var(--color-gray-scale-dark);
   font-size: small;
   font-family: "Poppins";
   font-weight: 400;
@@ -57,11 +56,13 @@
   .poke_ball {
     align-self: center;
     width: 50%;
-  height: 50%;
+    height: 50%;
   }
+
   .pokemon_image {
     width: fit-content;
   }
+
   .card_details {
     width: 50%;
     margin: auto;
