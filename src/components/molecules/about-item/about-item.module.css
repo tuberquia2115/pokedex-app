@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-height: 50px;
+}
+
+.container_icon__and_value {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.pokemon_label {
+  color: #666666;
+  font-family: 'Poppins';
+  font-size: small;
+  font-weight: 400;
+  text-align: center;
+  text-transform: capitalize;
+  text-wrap: wrap;
+}
+
+.content_value {
+  color: #1D1D1D;
+  font-weight: 400;
+  font-family: 'Poppins';
+  font-size: smaller;
+  text-align: center;
+  text-transform: capitalize;
+}

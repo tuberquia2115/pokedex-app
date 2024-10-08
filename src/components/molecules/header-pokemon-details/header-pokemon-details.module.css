@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 24px;
+  width: 95%;
+  margin: auto;
+ padding-top: 20px;
+}
+
+.container_btn_back {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.pokemon_id {
+  text-align: right;
+  font-weight: 700;
+  font-size: large;
+  font-family: Poppins;
+  color: var(--text-white);
+}
+
+.pokemon_name {
+  color: var(--text-white);
+  font-family: Poppins;
+  font-weight: 700;
+  font-size: larger;
+  line-height: 32px;
+  text-transform: capitalize;
+  padding-left: 8px;
+}
