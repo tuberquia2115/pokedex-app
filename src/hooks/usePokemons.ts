@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 
 import { GET_POKEMONS } from "@/graphql";
 import { PokemonData, PokemonV2Pokemon } from "@/interfaces";
@@ -11,7 +11,13 @@ export const usePokemons = (limit: number = 9) => {
   );
 
   const isPokemonSearchInputNumeric = !isNaN(Number(pokemonSearchInputValue));
-  const queryVariables = { limit, order_by: { [sortTypeSelected]: "asc" } };
+  const queryVariables = useMemo(
+    () => ({
+      limit,
+      order_by: { [sortTypeSelected]: "asc" },
+    }),
+    [limit, sortTypeSelected]
+  );
 
   const { data, error, loading, refetch } = useQuery<PokemonData>(
     GET_POKEMONS,
@@ -46,7 +52,7 @@ export const usePokemons = (limit: number = 9) => {
 
   useEffect(() => {
     refetch(queryVariables);
-  }, [sortTypeSelected]);
+  }, [sortTypeSelected, queryVariables, refetch]);
 
   return { pokemons: filteredPokemons, error, loading };
 };
