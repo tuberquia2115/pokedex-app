@@ -11,6 +11,7 @@
   --bg-card: #FFFFFF;
   --bg-gray-card: #EFEFEF;
   --text-white: #FFFFFF;
+  --color-gray-scale-dark: var(--color-gray-scale-dark);
 }
 
 * {
