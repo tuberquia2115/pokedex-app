@@ -1,14 +1,9 @@
 /* eslint-disable no-extra-boolean-cast */
-import { PokemonDetails } from "@/interfaces";
+import { PokemonDetails, PokemonV2Pokemon } from "@/interfaces";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-export interface SimplePokemon {
-  id: string;
-  name: string;
-}
-
 interface Favorites {
-  [key: string]: SimplePokemon;
+  [key: string]: PokemonV2Pokemon;
 }
 
 interface PokemonsFavoriteState {
@@ -28,7 +23,7 @@ const pokemonsSlide = createSlice({
     setFavoritePokemons(state, action: PayloadAction<Favorites>) {
       state.favorites = action.payload;
     },
-    toggleFavorite(state, action: PayloadAction<SimplePokemon>) {
+    toggleFavorite(state, action: PayloadAction<PokemonV2Pokemon>) {
       const pokemon = action.payload;
       const { id } = pokemon;
 

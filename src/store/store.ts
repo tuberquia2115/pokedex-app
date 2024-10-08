@@ -1,9 +1,9 @@
-import { useDispatch, useSelector, TypedUseSelectorHook } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
+import { useDispatch, useSelector, TypedUseSelectorHook } from "react-redux";
 
-import { localStorageMiddleware } from "./middlewares/localStorage-middleware";
-import pokemonsReducer from "./pokemons-reducer/pokemons-reducer";
 import filtersReducer from "./filters-reducer/filters-reducer";
+import pokemonsReducer from "./pokemons-reducer/pokemons-reducer";
+import { localStorageMiddleware } from "./middlewares/localStorage-middleware";
 
 export const store = configureStore({
   reducer: {
