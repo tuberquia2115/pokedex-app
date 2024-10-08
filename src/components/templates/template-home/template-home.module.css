@@ -1,0 +1,5 @@
+.container_template_home {
+  height: 100vh;
+  background-color: var(--primary-color);
+  padding: 0px 8px;
+}
