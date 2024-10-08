@@ -1,0 +1,12 @@
+.slider_thumb {
+  width: 100%;
+  border-radius: 4px;
+  height: 100%;
+}
+
+.range {
+  opacity: 1;
+  height: 10px;
+  border-start-start-radius: 10px;
+  border-end-start-radius: 10px;
+}

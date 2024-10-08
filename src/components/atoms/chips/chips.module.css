@@ -1,0 +1,13 @@
+.container_chips {
+  border-radius: 15px;
+  padding: 2px 8px;
+  width: fit-content;
+}
+
+.label_chip {
+  color: var(--text-white);
+  font-family: 'Poppins';
+  font-size: medium;
+  font-weight: 700;
+  text-transform: capitalize;
+}

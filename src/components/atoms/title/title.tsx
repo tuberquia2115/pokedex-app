@@ -1,8 +1,18 @@
+import { PropsWithChildren } from "react";
+
 import styles from "./title.module.css";
 
-export const Title = () => (
-  <div className={styles.container}>
-    <img src="assets/icons/poke-ball.png" alt="poke-ball" />
-    <p className={styles.title}>Pokédex</p>
-  </div>
+interface TitleProps extends PropsWithChildren {
+  classNameContainer?: string;
+  style?: React.CSSProperties;
+}
+
+export const Title: React.FC<TitleProps> = ({
+  children,
+  classNameContainer,
+  style,
+}) => (
+  <p className={`${styles.title} ${classNameContainer}`} style={style}>
+    {children}
+  </p>
 );
