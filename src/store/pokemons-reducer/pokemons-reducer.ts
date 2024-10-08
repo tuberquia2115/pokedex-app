@@ -1,4 +1,5 @@
 /* eslint-disable no-extra-boolean-cast */
+import { PokemonDetails } from "@/interfaces";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface SimplePokemon {
@@ -12,10 +13,12 @@ interface Favorites {
 
 interface PokemonsFavoriteState {
   favorites: Favorites;
+  pokemonDetails: PokemonDetails | null;
 }
 
 const initialState: PokemonsFavoriteState = {
   favorites: {},
+  pokemonDetails: null,
 };
 
 const pokemonsSlide = createSlice({
@@ -35,9 +38,13 @@ const pokemonsSlide = createSlice({
         state.favorites[id] = pokemon;
       }
     },
+    setPokemonDetails(state, action) {
+      state.pokemonDetails = action.payload;
+    },
   },
 });
 
-export const { toggleFavorite, setFavoritePokemons } = pokemonsSlide.actions;
+export const { toggleFavorite, setFavoritePokemons, setPokemonDetails } =
+  pokemonsSlide.actions;
 
 export default pokemonsSlide.reducer;

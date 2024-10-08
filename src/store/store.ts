@@ -3,10 +3,12 @@ import { configureStore } from "@reduxjs/toolkit";
 
 import { localStorageMiddleware } from "./middlewares/localStorage-middleware";
 import pokemonsReducer from "./pokemons-reducer/pokemons-reducer";
+import filtersReducer from "./filters-reducer/filters-reducer";
 
 export const store = configureStore({
   reducer: {
     pokemons: pokemonsReducer,
+    filters: filtersReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(localStorageMiddleware),

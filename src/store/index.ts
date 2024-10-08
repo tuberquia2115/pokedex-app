@@ -1,3 +1,3 @@
 export * from "./store";
-export * from "./middlewares";
+export * from "./filters-reducer";
 export * from "./pokemons-reducer";
