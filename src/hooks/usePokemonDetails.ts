@@ -2,10 +2,10 @@ import { useEffect, useMemo } from "react";
 import { usePalette } from "react-palette";
 import { useParams } from "react-router-dom";
 
+import { useQuery } from "@apollo/client";
 import { GET_POKEMON_BY_ID } from "@/graphql";
 import { PokemonDetailsData } from "@/interfaces";
 import { getImagePokemon, getStatName } from "@/utils";
-import { useQuery } from "@apollo/client";
 import { setPokemonDetails, useAppDispatch } from "@/store";
 
 export const usePokemonDetails = () => {

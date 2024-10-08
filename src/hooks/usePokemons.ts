@@ -1,27 +1,23 @@
-import { useEffect, useMemo } from "react";
+import { useEffect } from "react";
 
-import { GET_POKEMONS } from "@/graphql";
-import { PokemonData, PokemonV2Pokemon } from "@/interfaces";
 import { useAppSelector } from "@/store";
 import { useQuery } from "@apollo/client";
+import { GET_POKEMONS } from "@/graphql";
+import { PokemonData, PokemonV2Pokemon } from "@/interfaces";
 
-export const usePokemons = (limit: number = 9) => {
+export const usePokemons = (limit: number = 30) => {
   const { sortTypeSelected, pokemonSearchInputValue } = useAppSelector(
     (state) => state.filters
   );
-
+  const { favorites } = useAppSelector((state) => state.pokemons);
+  const favoritePokemons = Object.values(favorites);
+  const isFilterFavorites = sortTypeSelected === "favorites";
   const isPokemonSearchInputNumeric = !isNaN(Number(pokemonSearchInputValue));
-  const queryVariables = useMemo(
-    () => ({
-      limit,
-      order_by: { [sortTypeSelected]: "asc" },
-    }),
-    [limit, sortTypeSelected]
-  );
+  const queryVariables = { variables: { limit, order_by: { name: "asc" } } };
 
   const { data, error, loading, refetch } = useQuery<PokemonData>(
     GET_POKEMONS,
-    { variables: queryVariables }
+    queryVariables
   );
 
   const filterPokemonsById = (pokemons: PokemonV2Pokemon[]) => {
@@ -40,19 +36,33 @@ export const usePokemons = (limit: number = 9) => {
 
   const filterPokemons = (pokemons: PokemonV2Pokemon[]) => {
     if (pokemonSearchInputValue.length === 0) return pokemons;
-    if (isPokemonSearchInputNumeric && sortTypeSelected === "id")
+
+    if (isPokemonSearchInputNumeric && sortTypeSelected === "id") {
       return filterPokemonsById(pokemons);
-    if (!isPokemonSearchInputNumeric && sortTypeSelected === "name")
+    }
+    if (
+      !isPokemonSearchInputNumeric &&
+      ["name", "favorites"].includes(sortTypeSelected)
+    ) {
       return filterPokemonsByName(pokemons);
+    }
 
     return pokemons;
   };
 
-  const filteredPokemons = filterPokemons(data?.pokemon_v2_pokemon ?? []);
+  const filteredPokemons = filterPokemons(
+    isFilterFavorites ? favoritePokemons : data?.pokemon_v2_pokemon ?? []
+  );
 
   useEffect(() => {
-    refetch(queryVariables);
-  }, [sortTypeSelected, queryVariables, refetch]);
+    if (!isFilterFavorites) {
+      refetch({ order_by: { [sortTypeSelected]: "asc" } });
+    }
+  }, [isFilterFavorites, refetch, sortTypeSelected]);
 
-  return { pokemons: filteredPokemons, error, loading };
+  return {
+    pokemons: filteredPokemons,
+    error,
+    loading,
+  };
 };
