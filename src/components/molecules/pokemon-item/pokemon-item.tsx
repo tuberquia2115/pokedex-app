@@ -43,6 +43,7 @@ export const PokemonItem: React.FC<PokemonItemProps> = ({ pokemon }) => {
           className={styles.image}
           src={pokemonImg}
           fallbackImage={assetStorage.default.fallbackImagePokemon}
+          loading="lazy"
         />
         <div className={styles.card_footer} />
         <p className={styles.pokemon_name}>{pokemon.name}</p>
