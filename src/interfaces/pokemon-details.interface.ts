@@ -6,11 +6,11 @@ export interface PokemonDetailsData {
   pokemon_v2_pokemonspeciesflavortext_by_pk: PokemonV2PokemonspeciesflavortextByPk;
 }
 
-export interface PokemonV2GenerationByPkClass {
+interface PokemonV2GenerationByPkClass {
   name: string;
 }
 
-export interface PokemonV2PokemonByPk {
+interface PokemonV2PokemonByPk {
   id: number;
   name: string;
   height: number;
@@ -21,44 +21,44 @@ export interface PokemonV2PokemonByPk {
   pokemon_v2_pokemonsprites: PokemonV2Pokemonsprite[];
 }
 
-export interface PokemonV2Pokemonmove {
+interface PokemonV2Pokemonmove {
   pokemon_v2_move: PokemonV2MoveClass;
 }
 
-export interface PokemonV2MoveClass {
+interface PokemonV2MoveClass {
   name: string;
   id: number;
 }
 
-export interface PokemonV2Pokemonsprite {
+interface PokemonV2Pokemonsprite {
   sprites: Sprites;
 }
 
-export interface Sprites {
+interface Sprites {
   home: Home;
   showdown: Showdown;
   dream_world: DreamWorld;
   "official-artwork": OfficialArtwork;
 }
 
-export interface DreamWorld {
+interface DreamWorld {
   front_female: null;
   front_default: string;
 }
 
-export interface Home {
+interface Home {
   front_shiny: string;
   front_female: null;
   front_default: string;
   front_shiny_female: null;
 }
 
-export interface OfficialArtwork {
+interface OfficialArtwork {
   front_shiny: string;
   front_default: string;
 }
 
-export interface Showdown {
+interface Showdown {
   back_shiny: string;
   back_female: null;
   front_shiny: string;
@@ -69,13 +69,13 @@ export interface Showdown {
   front_shiny_female: null;
 }
 
-export interface PokemonV2Pokemonstat {
+interface PokemonV2Pokemonstat {
   pokemon_v2_stat: PokemonV2GenerationByPkClass;
   base_stat: number;
   stat_id: number;
 }
 
-export interface PokemonV2Pokemontype {
+interface PokemonV2Pokemontype {
   pokemon_v2_type: PokemonV2MoveClass;
 }
 
