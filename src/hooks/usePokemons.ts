@@ -5,7 +5,7 @@ import { useQuery } from "@apollo/client";
 import { GET_POKEMONS } from "@/graphql";
 import { PokemonData, PokemonV2Pokemon } from "@/interfaces";
 
-export const usePokemons = (limit: number = 100) => {
+export const usePokemons = (limit: number = 20) => {
   const { sortTypeSelected, pokemonSearchInputValue } = useAppSelector(
     (state) => state.filters
   );
