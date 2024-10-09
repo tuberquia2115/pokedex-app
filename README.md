@@ -15,7 +15,27 @@ This is a responsive web application, made with the following technologies:
 
 It allows you to consume the `pokéAPI API in graphQL`, to obtain the information and be able to navigate through the following screens, list of pokemons | details of a pokemon | list of favorite pokemons
 
+### Folder structure
+
+Implement the `Atomic Design Methodology` to have an order between my app components
+
+src
+- assets
+- components
+    - atoms
+    - molecules
+    - organisms
+    - pages
+    - templates
+- graphql
+- hooks
+- interfaces
+- providers
+- routes
+- store
+- utils
+
+
 
 ### Developer by Jose Manuel
-
-
+I loved doing this project. There were many challenges, from which I learned.
