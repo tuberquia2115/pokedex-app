@@ -1,20 +1,22 @@
 import { usePokemonDetails } from "@/hooks";
 import { PokeBallIcon } from "@/components/atoms/icons";
-import { Card, Image } from "@/components/atoms";
+import { Card, Image, Spinner } from "@/components/atoms";
 import { AboutPokemon, BaseStats } from "@/components/organisms";
 import { HeaderPokemonDetails, PokemonTypes } from "@/components/molecules";
 
 import styles from "./template-pokemon-details.module.css";
 
 export const TemplatePokemonDetails = () => {
-  const { pokemon, error } = usePokemonDetails();
+  const { pokemon, error, loading } = usePokemonDetails();
+
+  if (loading || !pokemon) return <Spinner />;
 
   if (error) return <p>Error!</p>;
 
   return (
     <div
       className={styles.container_root}
-      style={{ backgroundColor: pokemon.pokemonColors.lightVibrant! }}
+      style={{ backgroundColor: pokemon.pokemonColors.lightVibrant }}
     >
       <PokeBallIcon className={styles.poke_ball} />
       <div className={styles.container_layout_main}>
@@ -25,7 +27,6 @@ export const TemplatePokemonDetails = () => {
           alt={pokemon.name}
           className={styles.pokemon_image}
         />
-
         <Card classNameContainer={styles.card_details}>
           <PokemonTypes />
           <AboutPokemon />

@@ -37,6 +37,7 @@ export const SortMenu = () => {
         className={styles.sort_button}
         onClick={() => onToggleSortMenu()}
         label={sortButtonLabels[sortTypeSelected]}
+        aria-label="show-menu-options"
       />
       {isMenuOpen && (
         <div className={styles.container_sort}>

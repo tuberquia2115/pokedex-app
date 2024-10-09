@@ -21,14 +21,11 @@ export const Image: React.FC<ImageProps> = ({
     setImageSrc(src ?? "");
   };
 
-  const handleError = () => setImageSrc(fallbackImage);
-
   return (
     <img
       className={`${styles.image} ${className}`}
       src={imageSrc}
       onLoad={handleImageLoad}
-      onError={handleError}
       style={{ opacity: isLoaded ? 1 : 0.2 }}
       {...props}
     />

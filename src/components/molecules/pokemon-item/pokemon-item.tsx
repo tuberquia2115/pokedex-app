@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import { getImagePokemon } from "@/utils";
+import { assetStorage } from "@/utils";
 import { PokemonV2Pokemon } from "@/interfaces";
 import { Card, Image } from "@/components/atoms";
 import { toggleFavorite, useAppSelector, useAppDispatch } from "@/store";
@@ -17,8 +17,10 @@ export const PokemonItem: React.FC<PokemonItemProps> = ({ pokemon }) => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const { favorites } = useAppSelector((state) => state.pokemons);
-  const pokemonImg = getImagePokemon(pokemon.id);
+
   const isPokemonFavorite = !!favorites[pokemon.id];
+  const sprites = pokemon.pokemon_v2_pokemonsprites[0].sprites;
+  const pokemonImg = sprites["official-artwork"].front_default;
 
   const onGoToDetails = () => {
     navigate(`/pokemon-details/${pokemon.id}`);
@@ -36,7 +38,12 @@ export const PokemonItem: React.FC<PokemonItemProps> = ({ pokemon }) => {
     >
       <span className={styles.pokemon_id}>#{pokemon.id.toString()}</span>
       <div className={styles.container_image}>
-        <Image className={styles.image} src={pokemonImg} />
+        <Image
+          alt={`${pokemon.id}-${pokemon.name}`}
+          className={styles.image}
+          src={pokemonImg}
+          fallbackImage={assetStorage.default.fallbackImagePokemon}
+        />
         <div className={styles.card_footer} />
         <p className={styles.pokemon_name}>{pokemon.name}</p>
         <div onClick={onToggle} className={styles.container_favorite}>
